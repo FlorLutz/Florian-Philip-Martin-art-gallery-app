@@ -1,15 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import ArtPiecePreview from "./ArtPiecePreview.js";
 import "@testing-library/jest-dom";
-import mockRouter from "next-router-mock";
+import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
+import mockRouter from 'next-router-mock';
 
 beforeEach(() => {
-  jest.mock('next/router', () => require('next-router-mock'));
-  mockRouter.push("/");
+
   render(
-    <ArtPiecePreview
+    <ArtPieceDetails
       title="Mona Lisa"
       artist="Da Vinci"
+      year="2050"
+      genre="heavy-metal"
       image="https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg"
     />
   );
@@ -30,4 +31,19 @@ test("renders an artist info", () => {
 test("renders an image", () => {
   const image = screen.getByRole("img");
   expect(image).toBeInTheDocument();
+});
+
+test("renders an year", () => {
+  const yearInfo = screen.getByText(/Year: 2050/i);
+  expect(yearInfo).toBeInTheDocument();
+});
+
+test("renders an genre", () => {
+  const genreInfo = screen.getByText(/Genre: heavy-metal/i);
+  expect(genreInfo).toBeInTheDocument();
+});
+
+test("renders an image", () => {
+  const button = screen.getByRole("button");
+  expect(button).toBeInTheDocument();
 });

@@ -10,6 +10,7 @@ export default function ArtPieces({ pieces }) {
           title={piece.name}
           artist={piece.artist}
           image={piece.imageSource}
+          slug={piece.slug}
         />
       ))}
     </ul>
