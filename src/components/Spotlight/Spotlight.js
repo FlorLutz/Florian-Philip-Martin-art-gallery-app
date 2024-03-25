@@ -7,7 +7,6 @@ const Spotlight = ({ pieces }) => {
 
   return (
     <div className="spotlight">
-      <h2>Spotlight element</h2>
       <ArtPiecePreview
         key={randomPiece.slug}
         title={randomPiece.name}
