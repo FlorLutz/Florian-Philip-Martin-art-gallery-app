@@ -5,5 +5,10 @@ export default function index({ data }) {
   if (!data) {
     return;
   }
+  console.log("data", data);
+
+  if (!data) {
+    return;
+  }
   return <ArtPieces pieces={data} />;
 }
