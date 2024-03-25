@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import useSWR from "swr";
 import ArtPieces from "@/components/ArtPieces/ArtPieces.js";
+import Spotlight from "@/components/Spotlight/Spotlight";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-red-300">
+        <Spotlight pieces={data} />
         <ArtPieces pieces={data} />
       </main>
     </>
