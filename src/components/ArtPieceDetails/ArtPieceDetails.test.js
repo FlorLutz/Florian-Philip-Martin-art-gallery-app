@@ -1,14 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
+import mockRouter from 'next-router-mock';
 
 beforeEach(() => {
+
   render(
     <ArtPieceDetails
       title="Mona Lisa"
       artist="Da Vinci"
       year="2050"
-      genre="heavy metal"
+      genre="heavy-metal"
       image="https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg"
     />
   );

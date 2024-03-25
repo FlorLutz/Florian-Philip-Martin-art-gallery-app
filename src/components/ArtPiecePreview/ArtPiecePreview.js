@@ -3,10 +3,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 
-
 export default function ArtPiecePreview({ title, image, artist, slug }) {
   const router = useRouter();
-
 
   function handleClick(slug) {
     router.push(`/art-pieces/${slug}`);

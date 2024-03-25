@@ -1,8 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import ArtPiecePreview from "./ArtPiecePreview.js";
 import "@testing-library/jest-dom";
+import mockRouter from "next-router-mock";
 
 beforeEach(() => {
+  jest.mock('next/router', () => require('next-router-mock'));
+  mockRouter.push("/");
   render(
     <ArtPiecePreview
       title="Mona Lisa"
