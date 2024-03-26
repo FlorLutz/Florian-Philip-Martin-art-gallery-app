@@ -1,19 +1,21 @@
 import React, { useState } from "react"
 import useArtworks from "@/hooks/useArtworks"
 
-const FavoriteButton = ({ slug }) => {
+const FavoriteButton = ({ slug, trigger }) => {
   const { isFavorite, setFavorite } = useArtworks("art-pieces-info")
   const [isFav, setIsFav] = useState(isFavorite(slug) || false)
 
   const toggleFav = () => {
-    setIsFav((prev) => !prev)
-    setFavorite(slug, isFav)
+    const newState = !isFav
+    setIsFav(newState)
+    setFavorite(slug, newState)
+    if (trigger) trigger()
   }
 
   return (
     <div>
       <button onClick={() => toggleFav()}>
-        {isFavorite ? "I'm favorite" : "I'm not favorite"}
+        {isFav ? "I'm favorite" : "I'm not favorite"}
       </button>
     </div>
   )
