@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 
 export default function artPiecesSlug({ data }) {
   if (!data) {
-    return
+    return;
   }
 
   const router = useRouter();
-  const { slug } = router.query
-  const artPeace = data.find( art => art.slug === slug)
+  const { slug } = router.query;
+  const artPeace = data.find((art) => art.slug === slug);
 
   return (
     <ArtPieceDetails
@@ -18,6 +18,7 @@ export default function artPiecesSlug({ data }) {
       artist={artPeace.name}
       year={artPeace.year}
       genre={artPeace.genre}
+      colors={artPeace.colors}
     />
-  )
+  );
 }
