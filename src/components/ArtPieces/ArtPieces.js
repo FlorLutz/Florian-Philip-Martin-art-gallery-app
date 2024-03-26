@@ -1,7 +1,7 @@
 import React from "react"
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview"
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, trigger }) {
   return (
     <ul>
       {pieces.map((piece) => (
@@ -11,6 +11,7 @@ export default function ArtPieces({ pieces }) {
           artist={piece.artist}
           image={piece.imageSource}
           slug={piece.slug}
+          trigger={trigger}
         />
       ))}
     </ul>

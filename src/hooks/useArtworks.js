@@ -1,8 +1,13 @@
+import { useState } from "react"
+
 export default function useArtworks(key) {
   const storageKey = key
 
   function initArtworks(data) {
-    localStorage.setItem(storageKey, JSON.stringify(data))
+    const item = localStorage.getItem(storageKey)
+    if (item === null) {
+      localStorage.setItem(storageKey, JSON.stringify(data))
+    }
   }
 
   function isFavorite(slug) {
@@ -37,5 +42,20 @@ export default function useArtworks(key) {
     localStorage.setItem(storageKey, JSON.stringify(storage))
   }
 
-  return { initArtworks, isFavorite, setFavorite }
+  const [favourites, setFavourites] = useState([])
+  function getFavorites() {
+    const item = localStorage.getItem(storageKey)
+    if (item === null) return
+
+    let storage = JSON.parse(item)
+    if (!storage) return
+
+    const favoritesFiltered = storage.filter((art) => art.isFavorite === true)
+
+    setFavourites(favoritesFiltered.map((art) => art.id))
+
+    return favoritesFiltered.map((art) => art.id) // return a array of slugs
+  }
+
+  return { initArtworks, isFavorite, setFavorite, getFavorites, favourites }
 }

@@ -7,8 +7,8 @@ import useArtworks from "@/hooks/useArtworks"
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const favs = [
-  { "blue-and-red": { isFav: true } },
-  { "clay-bust-sculptures": { isFav: true } },
+  { "blue-and-red": { isFavorite: true } },
+  { "clay-bust-sculptures": { isFavorite: true } },
 ]
 
 export default function App({ Component, pageProps }) {
