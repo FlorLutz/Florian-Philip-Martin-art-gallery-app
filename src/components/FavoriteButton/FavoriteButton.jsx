@@ -1,32 +1,19 @@
-import React from "react";
-// import useLocalStorage from "@/hooks/useLocalStorage"
+import React, { useState } from "react"
+import useArtworks from "@/hooks/useArtworks"
 
-const FavoriteButton = ({isFavorite, slug }) => {
+const FavoriteButton = ({ slug }) => {
+  const { isFavorite, setFavorite } = useArtworks("art-pieces-info")
+  const [isFav, setIsFav] = useState(isFavorite(slug) || false)
 
-  // const setState = useLocalStorage("art-pieces-info", null)
+  const toggleFav = () => {
+    setIsFav((prev) => !prev)
+    setFavorite(slug, isFav)
+  }
 
-  // function toggleFav() {
-  //
-  //
-  // const index = state.findIndex(item => item.id === slug);
-  //
-  // // If the item is found
-  // if (index !== -1) {
-  //   const newState = [...state];
-  //
-  //   console.log("newState", newState)
-  //
-  //   newState[index].isFavorite = !newState[index].isFavorite;
-  //
-  //   setState(newState);
-  // }
-  // }
-
-  return(
+  return (
     <div>
-      <button>
-        {/*onClick={() => toggleFav()}*/}
-        {isFavorite ? "I'm favorite": "I'm not favorite"}
+      <button onClick={() => toggleFav()}>
+        {isFavorite ? "I'm favorite" : "I'm not favorite"}
       </button>
     </div>
   )

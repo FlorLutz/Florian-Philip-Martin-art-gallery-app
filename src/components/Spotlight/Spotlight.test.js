@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react"
+import "@testing-library/jest-dom"
 
-import Spotlight from "./Spotlight";
+import Spotlight from "./Spotlight"
 
 const artworks = [
   {
@@ -11,17 +11,17 @@ const artworks = [
     imageSource:
       "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
-];
+]
 
 beforeEach(() => {
-  render(<Spotlight pieces={artworks} />);
-});
+  render(<Spotlight pieces={artworks} />)
+})
 
 test("renders an image", () => {
-  const image = screen.getByRole("img");
-  expect(image).toBeInTheDocument();
-});
+  const image = screen.getByRole("img")
+  expect(image).toBeInTheDocument()
+})
 test("renders an artist info", () => {
-  const artistInfo = screen.getByText(/Artist: Diego Velázquez/i);
-  expect(artistInfo).toBeInTheDocument();
-});
+  const artistInfo = screen.getByText(/Artist: Diego Velázquez/i)
+  expect(artistInfo).toBeInTheDocument()
+})
