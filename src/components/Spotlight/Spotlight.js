@@ -14,7 +14,10 @@ const Spotlight = ({ pieces, onToggleFavorite, isFavorite }) => {
         artist={randomPiece.artist}
         image={randomPiece.imageSource}
       />
-      <FavoriteButton onToggleFavorite={isFavorite} isFavorite={isFavorite} />
+      <FavoriteButton
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
+      />
     </div>
   );
 };
