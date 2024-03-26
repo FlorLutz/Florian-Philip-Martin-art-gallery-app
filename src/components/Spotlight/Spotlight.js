@@ -1,5 +1,6 @@
 import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
 
 const Spotlight = ({ pieces }) => {
   const randomList = Math.floor(Math.random() * pieces.length);
@@ -7,6 +8,9 @@ const Spotlight = ({ pieces }) => {
 
   return (
     <div className="spotlight">
+      <FavoriteButton
+        slug={randomPiece.slug}
+      />
       <ArtPiecePreview
         key={randomPiece.slug}
         title={randomPiece.name}
