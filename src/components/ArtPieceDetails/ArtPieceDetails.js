@@ -1,6 +1,7 @@
 import React from "react"
+import Image from "next/image"
 import Link from "next/link"
-import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
+import ColorPalette from "../ColorPalette/ColorPalette"
 
 export default function ArtPieceDetails({
   image,
@@ -9,12 +10,15 @@ export default function ArtPieceDetails({
   year,
   genre,
   slug,
+  colors,
 }) {
   return (
     <div className="w-full h-full bg-cyan-800">
       <h1>Title of Masterpiece: {title}</h1>
       <FavoriteButton isFavorite={true} slug={slug} />
-      <img src={image} width={500} height={500} alt={`${artist} - ${title}`} />
+      <Image src={image} width={500} height={500} alt={`${artist} - ${title}`} />
+
+      <ColorPalette colors={colors} />
       <p>Artist: {artist}</p>
       <p>Year: {year}</p>
       <p>Genre: {genre}</p>
