@@ -18,6 +18,7 @@ export default function artPiecesSlug({ data }) {
       artist={artPeace.name}
       year={artPeace.year}
       genre={artPeace.genre}
+      slug={slug}
     />
   )
 }

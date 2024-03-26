@@ -1,5 +1,5 @@
-import React from "react";
-import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import React from "react"
+import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview"
 
 export default function ArtPieces({ pieces }) {
   return (
@@ -14,5 +14,5 @@ export default function ArtPieces({ pieces }) {
         />
       ))}
     </ul>
-  );
+  )
 }
