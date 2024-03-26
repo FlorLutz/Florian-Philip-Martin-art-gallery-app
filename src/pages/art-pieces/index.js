@@ -1,13 +1,13 @@
-import ArtPieces from "@/components/ArtPieces/ArtPieces";
-import React from "react";
+import ArtPieces from "@/components/ArtPieces/ArtPieces"
+import React from "react"
 
-export default function index({ data }) {
+export default function index({ data, onToggleFav }) {
   if (!data) {
-    return;
+    return
   }
 
   if (!data) {
-    return;
+    return
   }
-  return <ArtPieces pieces={data}/>;
+  return <ArtPieces pieces={data} onToggleFav={onToggleFav} />
 }
