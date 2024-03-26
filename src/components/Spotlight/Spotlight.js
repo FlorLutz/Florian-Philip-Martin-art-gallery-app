@@ -1,7 +1,8 @@
 import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-const Spotlight = ({ pieces }) => {
+const Spotlight = ({ pieces, onToggleFavorite, isFavorite }) => {
   const randomList = Math.floor(Math.random() * pieces.length);
   const randomPiece = pieces[randomList];
 
@@ -13,6 +14,7 @@ const Spotlight = ({ pieces }) => {
         artist={randomPiece.artist}
         image={randomPiece.imageSource}
       />
+      <FavoriteButton onToggleFavorite={isFavorite} isFavorite={isFavorite} />
     </div>
   );
 };
