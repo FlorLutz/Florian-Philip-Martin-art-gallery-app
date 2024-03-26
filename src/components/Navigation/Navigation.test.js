@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react"
+import "@testing-library/jest-dom"
 
-import Navigation from "./Navigation";
+import Navigation from "./Navigation"
 
 const artworks = [
   {
@@ -11,17 +11,17 @@ const artworks = [
     imageSource:
       "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
-];
+]
 
 beforeEach(() => {
-  render(<Navigation />);
-});
+  render(<Navigation />)
+})
 
 test("renders Spotlight link", () => {
-  const spotlightLink = screen.getByText("Spotlight");
-  expect(spotlightLink).toBeInTheDocument();
-});
+  const spotlightLink = screen.getByText("Spotlight")
+  expect(spotlightLink).toBeInTheDocument()
+})
 test("renders Gallery link", () => {
-  const galleryLink = screen.getByText("Gallery");
-  expect(galleryLink).toBeInTheDocument();
-});
+  const galleryLink = screen.getByText("Gallery")
+  expect(galleryLink).toBeInTheDocument()
+})

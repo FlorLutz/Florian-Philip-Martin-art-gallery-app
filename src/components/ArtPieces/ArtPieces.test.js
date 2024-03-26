@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react"
+import "@testing-library/jest-dom"
 
-import ArtPieces from "./ArtPieces.js";
+import ArtPieces from "./ArtPieces.js"
 
 const artworks = [
   {
@@ -18,18 +18,18 @@ const artworks = [
     imageSource:
       "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
-];
+]
 
 beforeEach(() => {
-  render(<ArtPieces pieces={artworks} />);
-});
+  render(<ArtPieces pieces={artworks} />)
+})
 
 test("renders a list", () => {
-  const list = screen.getByRole("list");
-  expect(list).toBeInTheDocument();
-});
+  const list = screen.getByRole("list")
+  expect(list).toBeInTheDocument()
+})
 
 test("renders a list with as many items as there are objects in the source array", () => {
-  const listItems = screen.getAllByRole("listitem");
-  expect(listItems.length).toEqual(2);
-});
+  const listItems = screen.getAllByRole("listitem")
+  expect(listItems.length).toEqual(2)
+})
