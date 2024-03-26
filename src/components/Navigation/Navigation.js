@@ -10,6 +10,9 @@ export default function Navigation() {
         <li className="flex items-center justify-center">
           <Link href="/art-pieces">Gallery</Link>
         </li>
+        <li className="flex items-center justify-center">
+          <Link href="/favorites">Favorites</Link>
+        </li>
       </ul>
     </nav>
   )
