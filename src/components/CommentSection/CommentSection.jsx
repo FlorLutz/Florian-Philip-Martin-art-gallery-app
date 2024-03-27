@@ -25,7 +25,7 @@ export default function CommentSection({ slug }) {
           {comments.map((comment, index) => (
             <div
               key={index}
-              className="flex justify-between border-2 border-cyan-500 rounded p-2 max-w-l bg-red-200"
+              className="flex justify-between border-2 border-cyan-500 rounded p-2 max-w-l"
             >
               <div className="flex flex-col">
                 <p style={{ wordWrap: "break-word", overflowWrap: "break-word" }}>
@@ -43,7 +43,7 @@ export default function CommentSection({ slug }) {
           ))}
         </div>
 
-        <form className="bg-red-200 flex" onSubmit={handleSubmit}>
+        <form className="flex" onSubmit={handleSubmit}>
           <input
             className="text-black bg-cyan-200 h-full flex-grow p-5"
             maxLength={50}
