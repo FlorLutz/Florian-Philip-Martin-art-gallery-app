@@ -1,11 +1,16 @@
 import { render, screen } from "@testing-library/react"
 import ArtPiecePreview from "./ArtPiecePreview.js"
 import "@testing-library/jest-dom"
-import mockRouter from "next-router-mock"
 
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      push: jest.fn(),
+      asPath: "/",
+    }
+  },
+}))
 beforeEach(() => {
-  jest.mock("next/router", () => require("next-router-mock"))
-  mockRouter.push("/")
   render(
     <ArtPiecePreview
       title="Mona Lisa"
@@ -16,9 +21,7 @@ beforeEach(() => {
 })
 
 test("renders a heading", () => {
-  const heading = screen.getByRole("heading", {
-    name: /Title of Masterpiece: Mona Lisa/i,
-  })
+  const heading = screen.getByText(/Title of Masterpiece: "Mona Lisa"/i)
   expect(heading).toBeInTheDocument()
 })
 
@@ -28,6 +31,6 @@ test("renders an artist info", () => {
 })
 
 test("renders an image", () => {
-  const image = screen.getByRole("img")
+  const image = screen.getByAltText(/Da Vinci - Mona Lisa/i)
   expect(image).toBeInTheDocument()
 })

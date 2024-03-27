@@ -1,6 +1,5 @@
 import React from "react"
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview"
-import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
 
 const Spotlight = ({ pieces }) => {
   const randomList = Math.floor(Math.random() * pieces.length)
