@@ -8,8 +8,7 @@ const artworks = [
     slug: 15,
     name: "La Rendición de Breda",
     artist: "Diego Velázquez",
-    imageSource:
-      "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
+    imageSource: "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
 ]
 
@@ -26,6 +25,6 @@ test("renders Gallery link", () => {
   expect(galleryLink).toBeInTheDocument()
 })
 test("renders Favorite link", () => {
-  const galleryLink = screen.getByText("favorite")
+  const galleryLink = screen.getByText("favorites")
   expect(galleryLink).toBeInTheDocument()
 })

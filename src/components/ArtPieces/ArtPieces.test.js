@@ -7,15 +7,13 @@ const artworks = [
     slug: 12,
     name: "La Guernica",
     artist: "Picasso",
-    imageSource:
-      "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
+    imageSource: "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
   {
     slug: 13,
     name: "Der Schrei",
     artist: "Munch",
-    imageSource:
-      "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
+    imageSource: "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
 ]
 jest.mock("next/router", () => ({
@@ -42,4 +40,14 @@ test("renders a list", () => {
 test("renders a list with as many items as there are objects in the source array", () => {
   const listItems = screen.getAllByRole("listitem")
   expect(listItems.length).toEqual(4)
+})
+
+test("renders an artist info", () => {
+  const artistInfo = screen.getAllByText(/Artist: Picasso/i)
+  expect(artistInfo.length).toEqual(2)
+})
+
+test("renders an image with the alt of the title", () => {
+  const favoriteButton = screen.getAllByAltText(/heart for favorite/i)
+  expect(favoriteButton.length).toEqual(4)
 })

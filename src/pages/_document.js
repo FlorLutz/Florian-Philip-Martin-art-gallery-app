@@ -6,7 +6,6 @@ export default function Document() {
       <Head>
         <title>art love art</title>
       </Head>
-
       <body>
         <Main />
         <NextScript />

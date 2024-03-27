@@ -6,6 +6,7 @@ import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
 import CommentSection from "@/components/CommentSection/CommentSection"
 
 export default function ArtPieceDetails({ image, title, artist, year, genre, slug, colors }) {
+  console.log(colors)
   return (
     <div className="flex flex-col items-center w-full bg-slate-900 pt-24 gap-5 text-cyan-200 mb-6">
       <h1 className="font-bold text-lg">{`Title of Masterpiece: "${title}"`}</h1>
