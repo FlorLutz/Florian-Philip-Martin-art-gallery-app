@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import ColorPalette from "../ColorPalette/ColorPalette"
 import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
+import CommentSection from "@/components/CommentSection/CommentSection"
 
 export default function ArtPieceDetails({
   image,
@@ -28,6 +29,8 @@ export default function ArtPieceDetails({
       <p>Artist: {artist}</p>
       <p>Year: {year}</p>
       <p>Genre: {genre}</p>
+
+      <CommentSection slug={slug} />
 
       <Link href="./">
         <button type="button">Back</button>
