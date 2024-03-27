@@ -7,7 +7,6 @@ export default function SpotlightPage({ data }) {
 
   return (
     <>
-      <h1>Spotlight</h1>
       <Spotlight pieces={data} />
     </>
   )

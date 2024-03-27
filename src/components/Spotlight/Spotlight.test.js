@@ -12,13 +12,20 @@ const artworks = [
       "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
   },
 ]
-
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      push: jest.fn(),
+      asPath: "/",
+    }
+  },
+}))
 beforeEach(() => {
   render(<Spotlight pieces={artworks} />)
 })
 
-test("renders an image", () => {
-  const image = screen.getByRole("img")
+test("renders an image with the alt of the title", () => {
+  const image = screen.getByAltText(/La Rendición de Breda/i)
   expect(image).toBeInTheDocument()
 })
 test("renders an artist info", () => {

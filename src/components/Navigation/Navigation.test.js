@@ -18,10 +18,14 @@ beforeEach(() => {
 })
 
 test("renders Spotlight link", () => {
-  const spotlightLink = screen.getByText("Spotlight")
+  const spotlightLink = screen.getByText("spotlight")
   expect(spotlightLink).toBeInTheDocument()
 })
 test("renders Gallery link", () => {
-  const galleryLink = screen.getByText("Gallery")
+  const galleryLink = screen.getByText("gallery")
+  expect(galleryLink).toBeInTheDocument()
+})
+test("renders Favorite link", () => {
+  const galleryLink = screen.getByText("favorite")
   expect(galleryLink).toBeInTheDocument()
 })

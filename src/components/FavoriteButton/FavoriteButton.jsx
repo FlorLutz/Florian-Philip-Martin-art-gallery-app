@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import useArtworks from "@/hooks/useArtworks"
+import Image from "next/image"
 
 const FavoriteButton = ({ slug, trigger }) => {
   const { isFavorite, setFavorite } = useArtworks("art-pieces-info")
@@ -13,10 +14,15 @@ const FavoriteButton = ({ slug, trigger }) => {
   }
 
   return (
-    <div>
+    <div className="absolute top-4 right-4">
       <button onClick={() => toggleFav()}>
-        {isFav ? "I'm favorite" : "I'm not favorite"}
-      </button>
+        <Image
+          src={isFav ? "/heart_fav.svg" : "/heart.svg"}
+          width={30}
+          height={30}
+          alt="heart for favorite"
+        />
+        </button>
     </div>
   )
 }

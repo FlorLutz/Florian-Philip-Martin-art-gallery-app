@@ -1,13 +1,12 @@
 import React from "react"
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview"
-import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
 
 const Spotlight = ({ pieces }) => {
   const randomList = Math.floor(Math.random() * pieces.length)
   const randomPiece = pieces[randomList]
 
   return (
-    <div className="spotlight">
+    <div className="flex flex-col items-center bg-slate-900 h-lvh pt-20">
       <ArtPiecePreview
         slug={randomPiece.slug}
         key={randomPiece.slug}

@@ -1,6 +1,6 @@
-import React from "react";
-import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
-import { useRouter } from "next/router";
+import React from "react"
+import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails"
+import { useRouter } from "next/router"
 
 export default function artPiecesSlug({ data }) {
   if (!data) {
@@ -14,8 +14,8 @@ export default function artPiecesSlug({ data }) {
   return (
     <ArtPieceDetails
       image={artPeace.imageSource}
-      title={artPeace.title}
-      artist={artPeace.name}
+      title={artPeace.name}
+      artist={artPeace.artist}
       year={artPeace.year}
       genre={artPeace.genre}
       colors={artPeace.colors}
