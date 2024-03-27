@@ -3,12 +3,9 @@ export default function useArtworks(key) {
 
   function initArtworks(data) {
     const item = localStorage.getItem(storageKey)
-    if (item !== null) return // if it already exists, do nothing
-
-    const storage = []
-    data.map((art) => storage.push({ id: art.slug, isFavorite: false, comments: [] }))
-
-    localStorage.setItem(storageKey, JSON.stringify(storage))
+    if (item === null) {
+      localStorage.setItem(storageKey, JSON.stringify(data))
+    }
   }
 
   function getStorage() {
@@ -23,15 +20,20 @@ export default function useArtworks(key) {
 
   function isFavorite(slug) {
     const storage = getStorage()
-    const artPiece = storage.find((art) => art.idd === slug)
+    if (storage === null) return false
 
-    if (artPiece !== undefined && artPiece.isFavorite) return true
+    const artPiece = storage.find((art) => art.id === slug)
+
+    if (artPiece && artPiece.isFavorite) {
+      return true
+    }
 
     return false
   }
 
   function setFavorite(slug, value) {
     const storage = getStorage()
+    if (storage === null) return
 
     const index = storage.findIndex((art) => art.id === slug)
 
@@ -44,6 +46,7 @@ export default function useArtworks(key) {
 
   function getFavorites() {
     const storage = getStorage()
+    if (storage === null) return
 
     const favoritesFiltered = storage.filter((art) => art.isFavorite === true)
 
@@ -52,6 +55,7 @@ export default function useArtworks(key) {
 
   function getComments(slug) {
     const storage = getStorage()
+    if (storage === null) return []
 
     const artwork = storage.find((artwork) => artwork.id === slug)
 
@@ -74,7 +78,11 @@ export default function useArtworks(key) {
   }
 
   function removeComment(slug, index) {
-    const storage = getStorage()
+    const item = localStorage.getItem(storageKey)
+    if (item === null) return null
+
+    const storage = JSON.parse(item)
+    if (storage === null) return null
 
     const updatedStorage = storage.map((artwork) => {
       if (artwork.id === slug) {
