@@ -9,6 +9,9 @@
 #__next {
   height: 100vh;
 }
+html {
+  font-size: 18px;
+}
 body {
   background-color: #0f172a;
 }

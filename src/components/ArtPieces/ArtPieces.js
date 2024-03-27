@@ -3,7 +3,7 @@ import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview"
 
 export default function ArtPieces({ pieces, trigger }) {
   return (
-    <ul className="flex flex-col gap-4 items-center py-5 pt-20">
+    <ul className="flex flex-col gap-4 items-center pb-5 pt-20">
       {pieces.map((piece) => (
         <ArtPiecePreview
           key={piece.slug}

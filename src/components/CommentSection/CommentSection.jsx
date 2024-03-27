@@ -20,8 +20,8 @@ export default function CommentSection({ slug }) {
 
   return (
     <>
-      <div className="flex flex-col border-cyan-900 border-4 rounded-xl bg-cyan-600 p-4 gap-4 w-[550px] h-[650px]">
-        <div className="h-full overflow-scroll">
+      <div className="flex flex-col border-cyan-900 border-4 rounded-xl bg-cyan-600 p-4 gap-4 w-[550px] max-h-[600px]">
+        <div className="h-full overflow-scroll flex flex-col gap-2">
           {comments.map((comment, index) => (
             <div
               key={index}
