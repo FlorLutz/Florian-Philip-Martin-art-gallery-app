@@ -19,40 +19,47 @@ export default function CommentSection({ slug }) {
   }
 
   return (
-    <div className="flex flex-col border-cyan-900 border-4 rounded-xl bg-cyan-600 p-4 gap-4">
-      <h2 className="font-semibold self-center">Comments</h2>
-      {comments.map((comment, index) => (
-        <div key={index} className="flex justify-between border-2 border-cyan-500 rounded p-2">
-          <p>
-            {comment.text}{" "}
-            <span className="text-sm text-gray-500">
-              ({new Date(comment.timestamp).toLocaleString()})
-            </span>
-          </p>
-          <button
-            onClick={() => handleRemoveComment(slug, index)}
-            className="font-semibold ml-5 border-2 border-cyan-500 rounded px-1 transition duration-1000 hover:bg-cyan-300"
-          >
-            remove
-          </button>
+    <>
+      <div className="flex flex-col border-cyan-900 border-4 rounded-xl bg-cyan-600 p-4 gap-4 w-[550px] h-[650px]">
+        <div className="h-full overflow-scroll">
+          {comments.map((comment, index) => (
+            <div
+              key={index}
+              className="flex justify-between border-2 border-cyan-500 rounded p-2 max-w-l bg-red-200"
+            >
+              <div className="flex flex-col">
+                <p style={{ wordWrap: "break-word", overflowWrap: "break-word" }}>
+                  {comment.text + " "}
+                </p>
+                <p className="text-sm">({new Date(comment.timestamp).toLocaleString()})</p>
+              </div>
+              <button
+                onClick={() => handleRemoveComment(slug, index)}
+                className="font-semibold ml-5 border-2 border-cyan-500 rounded px-1 transition duration-1000 hover:bg-cyan-300"
+              >
+                remove
+              </button>
+            </div>
+          ))}
         </div>
-      ))}
-      <form onSubmit={handleSubmit}>
-        <input
-          className="text-black bg-cyan-200"
-          maxLength={50}
-          type="text"
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          placeholder="Add a comment"
-        />
-        <button
-          type="submit"
-          className="font-semibold ml-5 border-4 border-cyan-500 rounded p-2 transition duration-1000 hover:bg-cyan-300"
-        >
-          submit
-        </button>
-      </form>
-    </div>
+
+        <form className="bg-red-200 flex" onSubmit={handleSubmit}>
+          <input
+            className="text-black bg-cyan-200 h-full flex-grow p-5"
+            maxLength={50}
+            type="text"
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            placeholder="Add a comment"
+          />
+          <button
+            type="submit"
+            className="font-semibold border-4 border-cyan-500 rounded p-2 transition duration-1000 hover:bg-cyan-300"
+          >
+            submit
+          </button>
+        </form>
+      </div>
+    </>
   )
 }
