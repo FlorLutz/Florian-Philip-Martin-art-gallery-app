@@ -5,26 +5,12 @@ import ColorPalette from "../ColorPalette/ColorPalette"
 import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
 import CommentSection from "@/components/CommentSection/CommentSection"
 
-export default function ArtPieceDetails({
-  image,
-  title,
-  artist,
-  year,
-  genre,
-  slug,
-  colors,
-}) {
+export default function ArtPieceDetails({ image, title, artist, year, genre, slug, colors }) {
   return (
-
-    <div className="flex flex-col items-center w-full h-full bg-slate-900 pt-24 pb-8 gap-5 text-cyan-200">
+    <div className="flex flex-col items-center w-full bg-slate-900 pt-24 gap-5 text-cyan-200 mb-6">
       <h1 className="font-bold text-lg">{`Title of Masterpiece: "${title}"`}</h1>
       <div className="relative inline-block">
-        <img
-          src={image}
-          width={500}
-          height={500}
-          alt={`${artist} - ${title}`}
-        />
+        <img src={image} width={500} height={500} alt={`${artist} - ${title}`} />
         <FavoriteButton isFavorite={true} slug={slug} />
       </div>
       <ColorPalette colors={colors} />
@@ -36,7 +22,7 @@ export default function ArtPieceDetails({
         href="./"
         className="font-semibold mt-5 border-4 border-cyan-500 rounded p-2 transition duration-1000 hover:bg-cyan-300"
       >
-      <button type="button">Back</button>
+        <button type="button">back</button>
       </Link>
     </div>
   )
