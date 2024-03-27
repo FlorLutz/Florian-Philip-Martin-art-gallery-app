@@ -6,7 +6,7 @@ const Spotlight = ({ pieces }) => {
   const randomPiece = pieces[randomList]
 
   return (
-    <div className="flex flex-col items-center justify-center bg-slate-900 pt-24 pb-6">
+    <div className="flex flex-col items-center justify-center bg-slate-900 pt-20 pb-6">
       <ArtPiecePreview
         slug={randomPiece.slug}
         key={randomPiece.slug}
