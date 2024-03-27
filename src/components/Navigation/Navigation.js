@@ -19,6 +19,9 @@ export default function Navigation() {
         >
           <Link href="/art-pieces">gallery</Link>
         </li>
+        <li className="flex items-center justify-center">
+          <Link href="/favorites">Favorites</Link>
+        </li>
       </ul>
     </nav>
   )

@@ -2,7 +2,13 @@ import React from "react"
 import { useRouter } from "next/router"
 import FavoriteButton from "@/components/FavoriteButton/FavoriteButton"
 
-export default function ArtPiecePreview({ title, image, artist, slug }) {
+export default function ArtPiecePreview({
+  title,
+  image,
+  artist,
+  slug,
+  trigger,
+}) {
   const router = useRouter()
   function handleClick(slug) {
     router.push(`/art-pieces/${slug}`)
@@ -14,7 +20,7 @@ export default function ArtPiecePreview({ title, image, artist, slug }) {
     >
       <h1 className="text-lg font-semibold">{`Title of Masterpiece: "${title}"`}</h1>
       <div className="relative inline-block">
-        <FavoriteButton isFavorite={true} slug={slug} />
+        <FavoriteButton isFavorite={true} slug={slug} trigger={trigger} />
         <img
           src={image}
           width={500}
