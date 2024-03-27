@@ -6,11 +6,6 @@ import useArtworks from "@/hooks/useArtworks"
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-const favs = [
-  { "blue-and-red": { isFavorite: true } },
-  { "clay-bust-sculptures": { isFavorite: true } },
-]
-
 export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR("https://example-apis.vercel.app/api/art", fetcher)
 
@@ -26,7 +21,6 @@ export default function App({ Component, pageProps }) {
 
   function initFavorites() {
     const arr = []
-
     data.map((art) => {
       arr.push({ id: art.slug, isFavorite: false, comments: [] })
     })
@@ -36,7 +30,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Layout />
-      <Component {...pageProps} data={data} />
+      <div className="bg-slate-900 h-full">
+        <Component {...pageProps} data={data} />
+      </div>
     </>
   )
 }

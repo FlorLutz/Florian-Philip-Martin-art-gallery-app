@@ -9,18 +9,21 @@ export default function Navigation() {
       <ul className="flex justify-center space-x-4 h-full font-bold text-xl gap-5">
         <li
           className="transition duration-1000 hover:text-white active:text-yellow-500"
-          style={{ color: path === "/" && "#18ffff" }}
+          style={{ color: path === "/" ? "#18ffff" : "#000" }}
         >
           <Link href="/">spotlight</Link>
         </li>
         <li
           className="transition duration-1000 hover:text-white active:text-yellow-500"
-          style={{ color: path === "/art-pieces" && "#18ffff" }}
+          style={{ color: path === "/art-pieces" ? "#18ffff" : "#000" }}
         >
           <Link href="/art-pieces">gallery</Link>
         </li>
-        <li className="flex items-center justify-center">
-          <Link href="/favorites">Favorites</Link>
+        <li
+          className="flex items-center justify-center"
+          style={{ color: path === "/favorites" ? "#18ffff" : "#000" }}
+        >
+          <Link href="/favorites">favorites</Link>
         </li>
       </ul>
     </nav>

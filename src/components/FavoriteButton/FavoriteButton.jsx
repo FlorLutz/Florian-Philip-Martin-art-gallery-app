@@ -14,16 +14,14 @@ const FavoriteButton = ({ slug, trigger }) => {
   }
 
   return (
-    <div className="absolute top-4 right-4">
-      <button onClick={() => toggleFav()}>
-        <Image
-          src={isFav ? "/heart_fav.svg" : "/heart.svg"}
-          width={30}
-          height={30}
-          alt="heart for favorite"
-        />
-        </button>
-    </div>
+    <button className="absolute top-4 right-4" onClick={() => toggleFav()}>
+      <Image
+        src={isFav ? "/heart-fav.svg" : "/heart.svg"}
+        width={30}
+        height={30}
+        alt="heart for favorite"
+      />
+    </button>
   )
 }
 
