@@ -63,6 +63,9 @@ export default function useArtworks(key) {
   }
 
   function addComment(slug, comment) {
+    comment = comment.trim()
+    if (comment.length === 0) return
+
     let artworks = JSON.parse(localStorage.getItem(storageKey)) || []
 
     artworks = artworks.map((artwork) => {

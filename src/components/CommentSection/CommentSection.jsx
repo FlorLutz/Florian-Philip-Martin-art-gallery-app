@@ -29,6 +29,7 @@ export default function CommentSection({ slug }) {
       ))}
       <form onSubmit={handleSubmit}>
         <input
+          maxLength={50}
           type="text"
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
