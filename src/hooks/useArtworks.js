@@ -70,9 +70,8 @@ export default function useArtworks(key) {
 
     artworks = artworks.map((artwork) => {
       if (artwork.id === slug) {
-        // deconstructing artwork into a new object,
-        // behind the comma override the current comment
-        return { ...artwork, comments: [...artwork.comments, comment] }
+        const newComment = { text: comment, timestamp: new Date().toISOString() }
+        return { ...artwork, comments: [...artwork.comments, newComment] }
       }
       return artwork
     })

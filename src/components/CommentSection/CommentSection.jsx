@@ -23,7 +23,12 @@ export default function CommentSection({ slug }) {
       <h2 className="font-semibold self-center">Comments</h2>
       {comments.map((comment, index) => (
         <div key={index} className="flex justify-between border-2 border-cyan-500 rounded p-2">
-          <p>{comment}</p>
+          <p>
+            {comment.text}{" "}
+            <span className="text-sm text-gray-500">
+              ({new Date(comment.timestamp).toLocaleString()})
+            </span>
+          </p>
           <button
             onClick={() => handleRemoveComment(slug, index)}
             className="font-semibold ml-5 border-2 border-cyan-500 rounded px-1 transition duration-1000 hover:bg-cyan-300"
