@@ -1,7 +1,7 @@
-# 4th Spiced Project
+# 5th Spiced Project
 
 ## Description
-This was the forth project of the spiced full-stack bootcamp. It was a group-project, in which my colleages, Martín, Philip, and I created an application using NextJS to display, like and comment on art pieces.
+This was the fifth project of the spiced full-stack bootcamp. It was a group-project, in which my colleages, Martín, Philip, and I created an application using NextJS to display, like and comment on art pieces.
 
 ## Key Learnings
 - creating routes with fixed pagenames and dynamic routes with slugs with NextJS' pages router
