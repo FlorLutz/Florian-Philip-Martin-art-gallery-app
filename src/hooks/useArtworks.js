@@ -63,17 +63,7 @@ export default function useArtworks(key) {
   }
 
   function addComment(slug, comment) {
-    if (comment[0] === " ") {
-      const audio = new Audio("/pig.mp3")
-      audio.play()
-    }
     comment = comment.trim()
-
-    if (comment.length === 0) {
-      const audio = new Audio("/pig.mp3")
-      audio.play()
-      return
-    }
 
     let artworks = JSON.parse(localStorage.getItem(storageKey)) || []
 

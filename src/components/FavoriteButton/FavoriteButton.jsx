@@ -7,8 +7,6 @@ const FavoriteButton = ({ slug, trigger }) => {
   const [isFav, setIsFav] = useState(isFavorite(slug) || false)
 
   const toggleFav = () => {
-    const audio = new Audio("/donkey.mp3")
-    audio.play()
     const newState = !isFav
     setIsFav(newState)
     setFavorite(slug, newState)
